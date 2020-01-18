@@ -3,9 +3,9 @@ package Carte;
 public class Arc {
 
 	public Sommet source, destination;
-	public int value;
+	public float value;
 
-	public Arc(Sommet source, Sommet destination, int value) {
+	public Arc(Sommet source, Sommet destination, float value) {
 		this.source = source;
 		this.destination = destination;
 		this.value = value;

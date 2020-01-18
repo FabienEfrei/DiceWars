@@ -49,10 +49,6 @@ public class Sommet {
 		return max;
 	}
 
-	public int calculMargeTotal() {
-		return dateTard - dateTot;
-	}
-
 	public boolean arcsSortie(Sommet incident) {
 		if (successeurs.contains(incident))
 			return true;

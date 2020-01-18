@@ -12,7 +12,7 @@ public class Carte {
 	private static ArrayList<Arc> arcs;
 	
 	
-	public void creationGraphe() throws NumberFormatException, IOException {
+	public static void creationGraphe() throws NumberFormatException, IOException {
 		File graphe = new File("carte.txt"); // lecture fichier
 		BufferedReader buffer = new BufferedReader(new FileReader(graphe));
 		String line;
@@ -27,22 +27,18 @@ public class Carte {
 			if (!line.isEmpty()) {
 				String[] l = line.split(" ");
 				int source = Integer.parseInt(l[0]);
-				int value = Integer.parseInt(l[1]);
+				float value = Float.parseFloat(l[1]);
 				int destination = Integer.parseInt(l[2]);
 				Arc a = new Arc(sommets.get(source), sommets.get(destination), value);
 				arcs.add(a);
-				this.addArc(a);
+				addArc(a);
 			}
 
 		}
 		buffer.close(); // fin parser
 	}
 	
-	public void dice() {
-		
-	}
-	
-	public void addArc(Arc a) { //ajoutez un arc
+	public static void addArc(Arc a) { //ajoutez un arc
 		if (taille() <= a.source.tag || taille() <= a.destination.tag)
 			throw new IllegalArgumentException();
 		else if (getNumSommet(a.source).successeurs.contains(a.destination))
@@ -57,11 +53,16 @@ public class Carte {
 		}
 	}
 	
-	public int taille() { //taille d'un sommet
+	public static int taille() { //taille d'un sommet
 		return sommets.size();
 	}
 	
-	public Sommet getNumSommet(Sommet n) {
+	public static Sommet getNumSommet(Sommet n) {
 		return sommets.get(sommets.indexOf(n));
 	}
+	
+	public static ArrayList<Sommet> getSucc(Sommet n) {
+		return getNumSommet(n).successeurs;
+	}	
+	
 }
