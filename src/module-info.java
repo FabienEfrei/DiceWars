@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author fabien
- *
- */
-module DiceWar {
-}
