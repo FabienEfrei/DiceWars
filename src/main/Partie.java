@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import Carte.CarteMat;
 import Joueur.Joueur;
+import Serialisation.Serialisation;
 
-public class Partie {
+public class Partie{
 
 
 	public static Scanner sc = new Scanner(System.in);
@@ -22,7 +23,8 @@ public class Partie {
 
 		while(!init) {
 			joueurs = new ArrayList<Joueur>();
-			
+			Serialisation.init();
+
 			while(nbrj < Integer.parseInt(args[0]))
 			{
 				Joueur a = new Joueur(nbrj);

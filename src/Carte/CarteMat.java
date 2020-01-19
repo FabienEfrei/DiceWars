@@ -1,5 +1,6 @@
 package Carte;
 
+import Serialisation.Serialisation;
 import main.Partie;
 
 public class CarteMat {
@@ -105,7 +106,6 @@ public class CarteMat {
 				System.out.println();
 				System.out.print("---------------------------------------------------------------------------------------------------");
 				System.out.println();
-		}
-			
+		}			
 	}
 }

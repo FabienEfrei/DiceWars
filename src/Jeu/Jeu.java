@@ -1,6 +1,8 @@
 package Jeu;
 
 import Carte.CarteMat;
+import Serialisation.Serialisation;
+import main.Partie;
 
 public class Jeu {
 
@@ -44,5 +46,16 @@ public class Jeu {
 
 	public static void newD() {
 
+	}
+	
+	
+	public static void sauvegarde() {
+		
+		Serialisation.writeObj(CarteMat.mapJ);
+		Serialisation.writeObj(CarteMat.mapD);
+		for(int i = 0; i < Partie.nbrj; i++) {
+			Serialisation.writeObj(Partie.joueurs.get(i));
+		}
+		
 	}
 }
